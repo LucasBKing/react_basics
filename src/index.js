@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-function tick() {
-    ReactDOM.render(<App date = {new Date()}/>, document.getElementById('root'));
-}
 
-setInterval(tick, 1000);
+ReactDOM.render(<App />, document.getElementById('root'));
+
 
 
 // If you want your app to work offline and load faster, you can change
