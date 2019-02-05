@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ninjas = ({ninjas}) => {
+const Ninjas = ({ninjas, deleteNinja}) => {
     //this.props.ninjas
     //let { ninjas } = props;
     // first kind of conditional output
@@ -30,6 +30,7 @@ const Ninjas = ({ninjas}) => {
         // ) : null;
     // });
 
+    // Delete Ninja will be only invoked when 'somebody' calls it
     return(
         <div className="ninja-list">
             {
@@ -39,12 +40,14 @@ const Ninjas = ({ninjas}) => {
                             <div>Name: { ninja.name }</div>
                             <div>Age: { ninja.age }</div>
                             <div>Belt: { ninja.belt }</div>
+                            <button onClick={() => {deleteNinja(ninja.id)}}>Delete Ninja</button>
                         </div>
                     ) : null;
                 })
             }
         </div>
     )
+
 }
 
 export default Ninjas;
