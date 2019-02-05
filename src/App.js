@@ -6,17 +6,21 @@ class App extends Component {
     age: 30
   }
 
-  handleClick(e) {
-   // console.log(e.target)
-    console.log(this.state)
+  handleClick = (e) => {
+    //console.log(e.target)
+    // How access this.state? using arrow function
+    this.setState({
+      name: 'Yoshi'
+    });
+    console.log(this.state);
   }
 
-  handleMouseOver(e) {
-    console.log(e.target, e.pageX)
+  handleMouseOver = (e) => {
+    console.log(e.target, e.pageX);
   }
 
-  handleCopy(e) {
-    console.log('Try being original for once!')
+  handleCopy = (e) => {
+    console.log('Try being original for once!');
   }
 
   render() {
