@@ -6,31 +6,26 @@ class App extends Component {
     age: 30
   }
 
-  handleClick = (e) => {
-    //console.log(e.target)
-    // How access this.state? using arrow function
+  handleChange = (e) => {
     this.setState({
-      name: 'Yoshi'
+      name: e.target.value
     });
-    console.log(this.state);
   }
 
-  handleMouseOver = (e) => {
-    console.log(e.target, e.pageX);
-  }
-
-  handleCopy = (e) => {
-    console.log('Try being original for once!');
+  handleSubmit = (e) => {
+    //prevent default behaviour
+    e.preventDefault()
+    console.log(`Form submitted ${this.state.name}`)
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Hello World</h1>
         <p>My name is: { this.state.name } and I am { this.state.age }</p>
-        <button onClick={ this.handleClick }>Click Me</button>
-        <button onMouseOver={  this.handleMouseOver }>Hover me</button>
-        <p onCopy={ this.handleCopy }>What we think, we become</p>
+        <form onSubmit={ this.handleSubmit }>
+          <input type="text" onChange={ this.handleChange } />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
