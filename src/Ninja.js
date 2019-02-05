@@ -4,13 +4,18 @@ const Ninjas = ({ninjas}) => {
     //this.props.ninjas
     //let { ninjas } = props;
     let ninjaList = ninjas.map(ninja => {
-        return (
-            <div className="ninja" key={ninja.id}>
-                <div>Name: { ninja.name }</div>
-                <div>Age: { ninja.age }</div>
-                <div>Belt: { ninja.belt }</div>
-            </div>
-        );
+        if( ninja.age < 13) {
+            return (
+                <div className="ninja" key={ninja.id}>
+                    <div>Name: { ninja.name }</div>
+                    <div>Age: { ninja.age }</div>
+                    <div>Belt: { ninja.belt }</div>
+                </div>
+            );
+        } else {
+            return null;
+        }
+        
     });
 
     return(
